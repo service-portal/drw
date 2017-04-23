@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">b72f5139db563e00c113d49fdf961951</sp_column>
+        <sp_widget display_value="Card">96d7dd35db563e00c113d49fdf9619b9</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>will</sys_created_by>
+        <sys_created_on>2017-04-23 19:54:43</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>ec706939db563e00c113d49fdf9619c6</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Hello World!</sys_name>
+        <sys_package display_value="Composing Reusable Widgets" source="x_snc_composing_re">641c6b89db56fa00c113d49fdf961907</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Composing Reusable Widgets">641c6b89db56fa00c113d49fdf961907</sys_scope>
+        <sys_update_name>sp_instance_ec706939db563e00c113d49fdf9619c6</sys_update_name>
+        <sys_updated_by>will</sys_updated_by>
+        <sys_updated_on>2017-04-23 20:09:53</sys_updated_on>
+        <title>Hello World!</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"title": {
+		"value": "Hello World!",
+		"displayValue": "Hello World!"
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=ec706939db563e00c113d49fdf9619c6"/>
+</record_update>
