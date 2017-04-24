@@ -7,6 +7,20 @@
 	
 	if (!isConfigured()) {
 		c.options.title = "Card widget";
+		c.data.secondary = "Configure instance options";
+		c.data.indicator_color = "green";
+		c.data.fields = [
+			{"label": "field label", "display_value": "field value"},
+			{"label": "another label", "display_value": "another value"}
+		];
+	}
+	
+	c.getPriority = function getPriority() {
+		var styles = {};
+		if (typeof c.data.indicator_color !== "undefined") {
+			styles["border-left"] = "3px solid " + c.data.indicator_color;
+		}
+		return styles;
 	}
 	
 	function isConfigured() {
@@ -14,15 +28,29 @@
 			return false;
 		}
 		
-		if (typeof c.options.title === "undefined") {
+		if (typeof c.options.title === "undefined")
 			return false;
-		}
 		
 		return true;
 	}
 }]]></client_script>
         <controller_as>c</controller_as>
-        <css/>
+        <css>.fields {
+  $dl-horizontal-offset: 120px;
+  dt {
+    font-weight: normal;
+    color: $text-muted;
+    float: left;
+    width: ($dl-horizontal-offset - 20);
+    clear: left;
+    text-align: right;
+    @include text-overflow;
+  }
+  dd {
+    @include clearfix;
+    margin-left: $dl-horizontal-offset;
+  }
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -43,7 +71,7 @@
         <sys_created_on>2017-04-23 19:17:09</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>96d7dd35db563e00c113d49fdf9619b9</sys_id>
-        <sys_mod_count>10</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>Card</sys_name>
         <sys_package display_value="Composing Reusable Widgets" source="x_snc_composing_re">641c6b89db56fa00c113d49fdf961907</sys_package>
         <sys_policy/>
@@ -51,10 +79,14 @@
         <sys_scope display_value="Composing Reusable Widgets">641c6b89db56fa00c113d49fdf961907</sys_scope>
         <sys_update_name>sp_widget_96d7dd35db563e00c113d49fdf9619b9</sys_update_name>
         <sys_updated_by>will</sys_updated_by>
-        <sys_updated_on>2017-04-24 01:01:59</sys_updated_on>
+        <sys_updated_on>2017-04-24 01:23:22</sys_updated_on>
         <template><![CDATA[<div class="list-group">
-  <a href="#" class="h4 list-group-item">
-    <span class="list-group-item-heading">{{::c.options.title}}</span>
+  <a href="#" class="list-group-item" ng-style="c.getPriority()">
+    <div class="small">{{::c.data.secondary}}</div>
+    <div class="h4 list-group-item-heading">{{::c.options.title}}</div>
+    <dl class="fields">
+      <span ng-repeat="f in c.data.fields"><dt>{{f.label}}</dt><dd>{{f.display_value}}</dd></span>
+    </dl>
   </a>
 </div>]]></template>
     </sp_widget>
