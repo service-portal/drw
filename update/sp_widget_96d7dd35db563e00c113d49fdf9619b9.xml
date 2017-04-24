@@ -4,6 +4,22 @@
         <client_script><![CDATA[function() {
   /* widget controller */
   var c = this;
+	
+	if (!isConfigured()) {
+		c.options.title = "Card widget";
+	}
+	
+	function isConfigured() {
+		if (!c.options) {
+			return false;
+		}
+		
+		if (typeof c.options.title === "undefined") {
+			return false;
+		}
+		
+		return true;
+	}
 }]]></client_script>
         <controller_as>c</controller_as>
         <css/>
@@ -27,7 +43,7 @@
         <sys_created_on>2017-04-23 19:17:09</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>96d7dd35db563e00c113d49fdf9619b9</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Card</sys_name>
         <sys_package display_value="Composing Reusable Widgets" source="x_snc_composing_re">641c6b89db56fa00c113d49fdf961907</sys_package>
         <sys_policy/>
@@ -35,7 +51,7 @@
         <sys_scope display_value="Composing Reusable Widgets">641c6b89db56fa00c113d49fdf961907</sys_scope>
         <sys_update_name>sp_widget_96d7dd35db563e00c113d49fdf9619b9</sys_update_name>
         <sys_updated_by>will</sys_updated_by>
-        <sys_updated_on>2017-04-23 19:53:33</sys_updated_on>
+        <sys_updated_on>2017-04-24 01:01:59</sys_updated_on>
         <template><![CDATA[<div class="list-group">
   <a href="#" class="h4 list-group-item">
     <span class="list-group-item-heading">{{::c.options.title}}</span>
